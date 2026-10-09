@@ -1,0 +1,197 @@
+\documentclass[11pt,a4paper]{article}
+
+% Copy this file to report/assignmentN_report.tex and fill the macros below.
+% Compile twice with XeLaTeX from the report/ directory.
+% One author. No group table and no self-assessment section.
+
+% ---------------------------------------------------------------------------
+% Assignment identity (edit per sheet)
+% ---------------------------------------------------------------------------
+\newcommand{\coursenum}{COURSE}
+\newcommand{\labnum}{N}
+\newcommand{\reportdate}{1 January 2026}
+\newcommand{\studentname}{name}
+\newcommand{\studentid}{000000000}
+
+% ---------------------------------------------------------------------------
+% Packages
+% ---------------------------------------------------------------------------
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\setmainfont{Latin Modern Roman}
+\setmonofont{Latin Modern Mono}
+\setCJKmainfont{Microsoft YaHei}[AutoFakeBold=true]
+\setCJKmonofont{Microsoft YaHei}[AutoFakeBold=true]
+\usepackage[a4paper,margin=2.4cm,headheight=22pt]{geometry}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{needspace}
+\usepackage{parskip}
+\usepackage{hyperref}
+
+% ---------------------------------------------------------------------------
+% Colours
+% ---------------------------------------------------------------------------
+\definecolor{ink}{HTML}{1F2933}
+\definecolor{heading}{HTML}{1B365D}
+\definecolor{accent}{HTML}{2B6CB0}
+\definecolor{rulegray}{HTML}{CBD5E0}
+\definecolor{rowalt}{HTML}{F7FAFC}
+\definecolor{codebg}{HTML}{F4F6F8}
+\definecolor{codeframe}{HTML}{D9E2EC}
+
+% ---------------------------------------------------------------------------
+% Typography and page style
+% ---------------------------------------------------------------------------
+\setstretch{1.15}
+\emergencystretch=2em
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.25em,topsep=0.35em}
+
+\titleformat{\section}
+  {\needspace{6\baselineskip}\Large\bfseries\color{heading}}
+  {\thesection}{0.75em}{}
+  [\vspace{0.15em}{\color{rulegray}\titlerule[0.6pt]}]
+\titleformat{\subsection}
+  {\needspace{4\baselineskip}\large\bfseries\color{heading}}
+  {\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}
+  {\needspace{3\baselineskip}\normalsize\bfseries\color{accent}}
+  {\thesubsubsection}{0.6em}{}
+
+\titlespacing*{\section}{0pt}{1.35em}{0.55em}
+\titlespacing*{\subsection}{0pt}{1.05em}{0.35em}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.25em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{heading}\coursenum\ \textperiodcentered\ Assignment~\labnum}
+\fancyfoot[C]{\small\color{heading}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{rulegray}\leaders\hrule height \headrulewidth\hfill}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\small\color{heading}\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\captionsetup{
+  font={small},
+  labelfont={bf,color=heading},
+  skip=6pt
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=heading,
+  urlcolor=accent,
+  citecolor=heading,
+  pdftitle={\coursenum\ Assignment \labnum},
+  pdfauthor={\studentname}
+}
+
+% ---------------------------------------------------------------------------
+% Helpers
+% ---------------------------------------------------------------------------
+\newcommand{\pname}[1]{\text{\normalfont\textit{#1}}}
+\newcommand{\shot}[2]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{#1}
+    \caption{#2}
+  \end{figure}}
+
+% Typeset truth table, only when the user asked for one.
+% #1 caption, #2 column spec. First row is the header.
+\newenvironment{truthtable}[2]{%
+  \begin{table}[H]
+  \centering
+  \caption{#1}
+  \renewcommand{\arraystretch}{1.22}
+  \setlength{\tabcolsep}{7pt}
+  \begin{tabular}{#2}
+  \toprule
+  \rowcolor{rowalt}
+}{%
+  \bottomrule
+  \end{tabular}
+  \end{table}}
+
+% ---------------------------------------------------------------------------
+\begin{document}
+\hypersetup{pageanchor=false}
+\thispagestyle{empty}
+\color{ink}
+
+% ============================ Title page ===================================
+\begin{titlepage}
+\centering
+\vspace*{1.15cm}
+
+{\color{heading}\rule{\textwidth}{1.15pt}}\\[0.55em]
+{\Large\bfseries\color{heading} \coursenum}\\[0.35em]
+{\large Laboratory Report}\\[0.45em]
+{\color{heading}\rule{\textwidth}{0.45pt}}
+
+\vspace{1.5cm}
+
+{\LARGE\bfseries\color{heading} Assignment \labnum}
+
+\vspace{1.6cm}
+
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}cc@{}}
+\toprule
+\rowcolor{rowalt}
+\textbf{\color{heading} Name} &
+\textbf{\color{heading} Student ID} \\
+\midrule
+\studentname & \studentid \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.85em}
+{\large Date: \reportdate}
+
+\vfill
+
+{\color{heading}\rule{\textwidth}{0.45pt}}\\[0.4em]
+{\small\color{heading}
+Answers to the assignment handout follow.}
+\end{titlepage}
+
+% ============================ Front matter =================================
+\hypersetup{pageanchor=true}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+
+% ============================ Exercises ====================================
+% One \section per exercise that asks for an answer, in handout order.
+\section{Exercise title from the handout}
+
+One section per required exercise. State the sentence, then the formula.
+A truth table uses the \texttt{truthtable} environment in this file.
+
+\end{document}
