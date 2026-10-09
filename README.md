@@ -12,31 +12,23 @@ The report is built for three things.
 
 The report body is English. This page is the English copy of the documentation.
 
-## Template
+## Pages
 
-`template.tex` is the shape every report starts from. The cover has the course code, the words Laboratory Report, the assignment number, one name, one student ID, and the date. The shipped placeholders are `COURSE`, `name`, `000000000`, and `1 January 2026`.
+`template.tex` is the shape every report starts from. The cover has the course code, the words Laboratory Report, the assignment number, one name, one student ID, and the date. The shipped placeholders are `COURSE`, `name`, `000000000`, and `1 January 2026`. A later section is one exercise from the handout: the sentence, the formula, and, when the sheet asks for it, a truth table or a tree.
 
-![Cover of the empty template. The name is the placeholder name, and the student ID is 000000000.](docs/template-cover.png)
+The finished pages are from a completed assignment of twenty exercises. Only the author's name and the two ID numbers are covered. The course code in the header, the predicate names, the formulas, and the parse trees stay as written. Handwriting is used only when the handout asks for a photo.
 
-A later section is one exercise from the handout: the sentence, the formula, and, when the sheet asks for it, a truth table or a tree. Handwriting is used only when the handout asks for a photo. Otherwise the table is typeset.
+| Empty template. The name is `name`, and the student ID is `000000000`. | Finished cover. The name and the two ID numbers are black. |
+|---|---|
+| ![Empty template cover](docs/template-cover.png) | ![Finished cover](docs/finished-cover.png) |
 
-## Finished report
+| Contents, one line for each required exercise. | Exercises 1 to 6. Each predicate is named once, then used in a formula. |
+|---|---|
+| ![Finished contents](docs/finished-contents.png) | ![Exercises 1 to 6](docs/finished-exercises.png) |
 
-The pages below are from a completed assignment of twenty exercises. The author's name, the ID numbers, and the institution marks are covered in black. The exercises, formulas, and parse trees are the original working.
+Exercises 12 and 13 draw the parse tree, then one sentence names the root and the two subtrees.
 
-![Finished cover. The name, the ID numbers, and the institution marks are black.](docs/finished-cover.png)
-
-The contents list one section for each required exercise, in handout order.
-
-![Contents of the finished report, with one line for each exercise.](docs/finished-contents.png)
-
-A typical stretch states the predicate in English once, then gives a single typed formula.
-
-![Exercises 1 to 6. Institution names inside the predicates are black.](docs/finished-exercises.png)
-
-Where the sheet asks for a parse tree, the tree is drawn and one sentence names the root and the two subtrees.
-
-![Exercises 12 and 13, with the parse trees for the two formulas.](docs/finished-trees.png)
+<img src="docs/finished-trees.png" alt="Parse trees for exercises 12 and 13" width="49%">
 
 ## Files
 
