@@ -1,34 +1,115 @@
-# 课程实验报告
+<p align="center">
+  <a href="README.md">English</a>
+  &nbsp;·&nbsp;
+  <a href="README.zh-CN.md"><b>中文</b></a>
+</p>
 
-[English](README.md) | 中文
+<h1 align="center">课程实验报告</h1>
 
-面向单人课程实验报告的 Cursor 技能，用 XeLaTeX 排版。
+<p align="center">
+  面向单人课程实验报告的 Cursor 技能，用 XeLaTeX 排版。<br>
+  无 AI 痕迹。答完即止。讲义要求的每一题，按原顺序写完。
+</p>
 
-按三件事来做。
+<p align="center">
+  <img alt="XeLaTeX" src="https://img.shields.io/badge/XeLaTeX-report-1B365D">
+  <img alt="单人" src="https://img.shields.io/badge/author-one-2B6CB0">
+  <img alt="正文语言" src="https://img.shields.io/badge/body-English-1F2933">
+</p>
 
-- **无 AI 痕迹。** 正文是做完题目的学生口吻。公式写在同一句英文里。真值表或语法树后面只留一句说明。不加综述，不加讲义没要求的题，不加收尾议论。
-- **简洁。** 每题答完即止。谓词用英文说明一次，之后只用符号。
-- **要求齐全。** 讲义里要求作答的每一题都有一节，顺序与讲义一致。字母、联结词、谓词名和真值表行序都沿用讲义。
+<p align="center">
+  <a href="#preview">预览</a>
+  &nbsp;·&nbsp;
+  <a href="#quick-start">开始使用</a>
+  &nbsp;·&nbsp;
+  <a href="#layout">文件</a>
+</p>
 
-报告正文为英文。本页是说明的中文版。
+<br>
 
-## 页面
+## 为什么是这个样子
 
-`template.tex` 是每份报告的起点。封面有课程号、Laboratory Report、作业号、一个姓名、一个学号和日期。随仓库给出的占位是 `COURSE`、`name`、`000000000` 和 `1 January 2026`。后面每一节对应讲义里的一题：先写句子和公式；讲义要求时再给真值表或语法树。
+<table>
+<tr>
+<td width="33%" valign="top">
 
-成稿来自一份二十题的作业。只涂黑了作者姓名和两个学号。页眉里的课程号、谓词名、公式和语法树都保留原样。只有讲义要求交照片时才用手写。
+### 无 AI 痕迹
 
-| 空白模板。姓名是 `name`，学号是 `000000000`。 | 成稿封面。姓名和两个学号为黑块。 |
-|---|---|
-| ![空白模板封面](docs/template-cover.png) | ![成稿封面](docs/finished-cover.png) |
+正文是做完题目的学生口吻。公式写在同一句英文里。真值表或语法树后面只留一句说明。不加综述，不加讲义没要求的题，不加收尾议论。
 
-| 目录，每道要求作答的题一行。 | 第 1 至 6 题。谓词说明一次，随后写入公式。 |
-|---|---|
-| ![成稿目录](docs/finished-contents.png) | ![第 1 至 6 题](docs/finished-exercises.png) |
+</td>
+<td width="33%" valign="top">
 
-第 12 与 13 题先画语法树，再用一句话指出根和左右子树。
+### 简洁
+
+每题答完即止。谓词用英文说明一次，之后只用符号。
+
+</td>
+<td width="33%" valign="top">
+
+### 要求齐全
+
+讲义里要求作答的每一题都有一节，顺序与讲义一致。字母、联结词、谓词名和真值表行序都沿用讲义。
+
+</td>
+</tr>
+</table>
+
+## 预览
+
+左边是空白模板封面，右边以及下面是成稿。只涂黑了作者姓名和两个学号。页眉里的课程号仍然可见。
+
+<table>
+<tr>
+<td width="50%">
+
+**空白模板**
+占位为 `COURSE`、`name`、`000000000`。
+
+<img src="docs/template-cover.png" alt="空白模板封面">
+
+</td>
+<td width="50%">
+
+**成稿封面**
+姓名和两个学号为黑块。
+
+<img src="docs/finished-cover.png" alt="成稿封面">
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**目录**
+每道要求作答的题一行。
+
+<img src="docs/finished-contents.png" alt="成稿目录">
+
+</td>
+<td width="50%">
+
+**第 1 至 6 题**
+谓词说明一次，随后写入公式。
+
+<img src="docs/finished-exercises.png" alt="第 1 至 6 题">
+
+</td>
+</tr>
+</table>
+
+**第 12 与 13 题。** 先画语法树，再用一句话指出根和左右子树。
 
 <img src="docs/finished-trees.png" alt="第 12 与 13 题的语法树" width="49%">
+
+## 开始使用
+
+1. 把本目录放到 Cursor 会加载的项目技能路径下。
+2. 给出讲义，并要求写报告。
+3. 替换封面姓名。学号在定稿前询问，不会编造。
+4. 在 `report/` 目录用 XeLaTeX 编译两遍。第二遍填上目录。
+
+只有讲义要求交照片时才用手写，其余表格都排版。
 
 ## 文件
 
@@ -40,10 +121,8 @@
 | `student.md` | 姓名与学号 |
 | `notation.md` | 联结词、量词、表格形式 |
 | `handwriting.md` | 仅在要求手写时使用的拍照步骤 |
-| `docs/` | 本页使用的图片 |
+| `docs/` | 上面这些图 |
 
-## 用法
-
-把本目录放到 Cursor 会加载的项目技能路径下，给出讲义并要求写报告。
-
-封面姓名在替换之前保持 `name`。学号为空，定稿前会先询问，不会编造。在 `report/` 目录用 XeLaTeX 编译两遍，第二遍填上目录。
+<p align="center">
+  <a href="README.md">Read this page in English</a>
+</p>
